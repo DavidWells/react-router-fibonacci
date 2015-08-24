@@ -231,6 +231,9 @@ form {
         &:before {
             left: -4px;
         }
+        @media (max-width: 768px) {
+          font-size:23px;
+        }
     }
     &:before {
       content: "";

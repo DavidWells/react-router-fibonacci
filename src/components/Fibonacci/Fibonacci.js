@@ -8,8 +8,12 @@ export default class Fibonacci extends Component {
     }
     /* Generate Fibonacci Number */
     fibonacci(n){
-        return Math.floor((Math.pow( 1 + Math.sqrt(5), n)
-                    - Math.pow( 1 - Math.sqrt(5), n)) / (Math.pow(2, n) * Math.sqrt(5)));
+        if(n > 600) {
+          return "Number too large to calculate";
+        } else {
+          return Math.floor((Math.pow( 1 + Math.sqrt(5), n)
+                      - Math.pow( 1 - Math.sqrt(5), n)) / (Math.pow(2, n) * Math.sqrt(5)));
+        }
     }
     componentWillMount() {
         console.log(this.props.params.number);
