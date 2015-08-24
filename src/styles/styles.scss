@@ -152,7 +152,6 @@ form {
     padding-right:10px;
   }
   .bg-bubbles {
-
       top: 77px;
   }
 }
@@ -352,6 +351,9 @@ form {
     background-size: 130px;
     -webkit-animation-delay: 11s;
             animation-delay: 11s;
+  }
+  @media (max-width: 768px) {
+    top:77px !important;
   }
 }
 /* Animations */
