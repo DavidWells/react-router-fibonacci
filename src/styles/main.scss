@@ -1,0 +1,11 @@
+/*
+  Global styles
+*/
+
+@import 'fonts/roboto';
+@import 'typography';
+@import 'styles';
+
+:global(body) {
+  position: relative;
+}
