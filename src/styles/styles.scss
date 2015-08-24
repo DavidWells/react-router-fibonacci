@@ -137,7 +137,9 @@ form {
 }
 @media (max-width: 768px) {
   .navbar-brand {
-    display:none;
+    font-size: 16px;
+    line-height: 25px;
+    padding:15px;
   }
   .navbar-right {
     position: absolute;
