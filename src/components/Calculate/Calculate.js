@@ -20,7 +20,18 @@ export default class Calculate extends Component {
     const numberValid = Number.isInteger(number);
 
     if (!number) {
-      return this.setState({ error: true, errorType: 'number'});
+      this.setState({ error: true, errorType: 'number'});
+      this.resetErrorClass();
+      return;
+    }
+
+    if(number > 600) {
+      console.log("TOO large");
+      this.refs.number.getDOMNode().value = "";
+      this.setState({ error: true, errorType: 'number_to_large'});
+      this.refs.number.getDOMNode().focus();
+      this.resetErrorClass();
+      return;
     }
 
     router.replaceWith('/fibonacci/' + number);
@@ -37,7 +48,10 @@ export default class Calculate extends Component {
   getErrorMsg(error){
       switch (error) {
         case "number":
-          return "Please enter a number bro!";
+          return "Please enter a number dude!";
+          break;
+        case "number_to_large":
+          return "Number too large. Must be under 600 or lower";
           break;
         default:
           return null;
